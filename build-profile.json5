@@ -30,6 +30,10 @@
           ]
         }
       ]
+    },
+    {
+      "name": "JhCommon",
+      "srcPath": "./JhCommon",
     }
   ]
 }

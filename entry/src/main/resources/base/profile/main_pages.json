@@ -1,5 +1,23 @@
 {
   "src": [
-    "pages/Index"
+    "pages/Index",
+    "pages/login/LoginPage",
+    "pages/BaseTabBar",
+    "pages/one/OnePage",
+    "pages/two/TwoPage",
+    "pages/three/ThreePage",
+    "pages/four/FourPage",
+    "pages/demos/DemoListPage",
+    "pages/demos/ui/UIDemoListPage",
+    "pages/demos/ui/TestTabBar",
+    "pages/demos/ui/TestNav",
+    "pages/demos/ui/TestNavigation",
+    "pages/demos/ui/TestBaseNavigation",
+    "pages/demos/http/HttpDemoListPage",
+    "pages/demos/http/HttpTest1Page",
+    "pages/demos/http/HttpTest2Page",
+    "pages/demos/alert/AlertDemoListPage",
+    "pages/demos/alert/ToastTest1Page",
+    "pages/demos/other/AESTestPage"
   ]
 }
