@@ -18,6 +18,7 @@
     "pages/demos/http/HttpTest2Page",
     "pages/demos/alert/AlertDemoListPage",
     "pages/demos/alert/ToastTest1Page",
+    "pages/demos/alert/AlertTestPage",
     "pages/demos/other/AESTestPage"
   ]
 }

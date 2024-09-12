@@ -15,6 +15,8 @@ export { BaseNavigation } from '../JhCommon/src/main/ets/JhCommon/components/Bas
 
 export { JhButton } from '../JhCommon/src/main/ets/JhCommon/components/JhButton'
 
+export { JhAlert } from '../JhCommon/src/main/ets/JhCommon/components/JhAlert'
+
 export { JhProgressHUD } from './src/main/ets/JhCommon/components/JhProgressHUD'
 
 export { JhTextList, ItemType } from '../JhCommon/src/main/ets/JhCommon/components/JhTextList'

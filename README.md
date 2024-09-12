@@ -22,6 +22,7 @@ pwd：123456
 * API接口管理和数据管理
 * 组件
     * BaseNavigation、BaseTabBar
+    * 弹框(中间、底部、toast)
 * 工具类
     * AES加解密、MD5加密、Base64编码解码
     * 本地数据AES加密存储
@@ -62,9 +63,9 @@ pwd：123456
 <br>
 <br>
 
-| <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Login.gif" width="380" height="800"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/BaseNavigation.gif" width="380" height="800"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/JhProgressHUD.gif" width="380" height="800"> |
-|:-----------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
-|                                                 ![]()                                                 |                                                     ![]()                                                      |                                                     ![]()                                                      |  
+|     <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Login.gif" width="190" height="400">     | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Base/BaseNavigation.gif" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400"> |
+|:-------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
+| <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400"> |                                                        ![]()                                                        |                                                        ![]()                                                        |  
 
 <br>
 
