@@ -19,6 +19,10 @@
     "pages/demos/alert/AlertDemoListPage",
     "pages/demos/alert/ToastTest1Page",
     "pages/demos/alert/AlertTestPage",
-    "pages/demos/other/AESTestPage"
+    "pages/demos/other/AESTestPage",
+    "pages/demos/form/FormDemoListPage",
+    "pages/demos/form/FormLoginTextInputTestPage",
+    "pages/demos/form/FormInputCellTestPage",
+    "pages/demos/form/FormSelectCellTestPage"
   ]
 }

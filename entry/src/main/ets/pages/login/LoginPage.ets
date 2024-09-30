@@ -1,5 +1,6 @@
 import { router } from '@kit.ArkUI';
 import { APIs, HttpUtils, JhAESPreferencesUtils, JhColorUtils, JhProgressHUD, kUserDefault_UserInfo, ResType } from 'JhCommon';
+import { JhLoginTextInput } from 'JhCommon';
 import { JhButton } from 'JhCommon/src/main/ets/JhCommon/components/JhButton';
 
 @Entry
@@ -46,37 +47,26 @@ export struct LoginPage {
         .backgroundColor(JhColorUtils.randomColor())
         .borderRadius(50)
 
-        TextInput({
+        JhLoginTextInput({
           text: this.name,
-          placeholder: '请输入用户名'
+          // labelText: '用户名',
+          placeholder: '请输入用户名',
+          leftIcon: $rawfile("svg/ic_login_user.svg"),
+          inputCallBack: (value) => {
+            this.name = value as string
+          },
         })
-          .height(50)
-          .margin({ top: 20 })
-          .onChange((value) => {
-            this.name = value
-          })
-          .onSubmit((EnterKeyType) => {
-            console.info(EnterKeyType + '输入法回车键的类型值')
-          })
-        TextInput({
+        Blank().height(8)
+        JhLoginTextInput({
           text: this.pwd,
+          // labelText: '密码',
           placeholder: '请输入密码',
+          leftIcon: $rawfile("svg/ic_login_pwd.svg"),
+          isPwd: true,
+          inputCallBack: (value) => {
+            this.pwd = value as string
+          },
         })
-          .height(50)
-          .type(InputType.Password)
-          .margin({ top: 20 })
-          .onChange((value) => {
-            this.pwd = value
-          })
-          .onSubmit((EnterKeyType) => {
-            console.info(EnterKeyType + '输入法回车键的类型值')
-          })
-        // Button('登录')
-        //   .width('100%')
-        //   .margin({ top: 50, bottom: 30 })
-        //   .opacity(this.disabled ? 0.6 : 1)
-        //   .backgroundColor(KColors.kThemeColor)
-        //   .onClick(() => this.clickLogin())
         JhButton({
           text: '登录',
           disabled: this.disabled,

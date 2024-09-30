@@ -9,6 +9,7 @@ struct TestNav {
     { label: '网络请求', value: 'pages/demos/http/HttpDemoListPage' },
     { label: 'AES、MD5和本地加密存储', value: 'pages/demos/other/AESTestPage' },
     { label: '底部、中间、toast、自定义弹框', value: 'pages/demos/alert/AlertDemoListPage' },
+    { label: 'JhForm表单', value: 'pages/demos/form/FormDemoListPage' },
   ]
 
   build() {

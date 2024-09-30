@@ -1,3 +1,12 @@
+/// JhForm
+export { JhLoginTextInput } from './src/main/ets/JhForm/JhLoginTextInput'
+
+export { JhFormInputCell } from './src/main/ets/JhForm/JhFormInputCell'
+
+export { JhFormSelectCell } from './src/main/ets/JhForm/JhFormSelectCell'
+
+export { JhTextInput } from './src/main/ets/JhForm/JhTextInput'
+
 /// configs
 export { KColors } from '../JhCommon/src/main/ets/JhCommon/configs/Colors'
 
