@@ -5,6 +5,8 @@ export { JhFormInputCell } from './src/main/ets/JhForm/JhFormInputCell'
 
 export { JhFormSelectCell } from './src/main/ets/JhForm/JhFormSelectCell'
 
+export { JhSetCell } from './src/main/ets/JhForm/JhSetCell'
+
 export { JhTextInput } from './src/main/ets/JhForm/JhTextInput'
 
 /// configs

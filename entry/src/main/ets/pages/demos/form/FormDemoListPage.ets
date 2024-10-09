@@ -8,6 +8,7 @@ struct FormDemoListPage {
     { label: 'JhLoginTextInput', value: 'pages/demos/form/FormLoginTextInputTestPage' },
     { label: 'JhFormInputCell', value: 'pages/demos/form/FormInputCellTestPage' },
     { label: 'JhFormSelectCell', value: 'pages/demos/form/FormSelectCellTestPage' },
+    { label: 'JhSetCell', value: 'pages/demos/form/SetCellTestPage' },
   ]
 
   build() {

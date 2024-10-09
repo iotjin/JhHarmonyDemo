@@ -23,6 +23,7 @@
     "pages/demos/form/FormDemoListPage",
     "pages/demos/form/FormLoginTextInputTestPage",
     "pages/demos/form/FormInputCellTestPage",
-    "pages/demos/form/FormSelectCellTestPage"
+    "pages/demos/form/FormSelectCellTestPage",
+    "pages/demos/form/SetCellTestPage"
   ]
 }
