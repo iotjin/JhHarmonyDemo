@@ -14,7 +14,7 @@ struct FormDemoListPage {
   build() {
     Scroll() {
       JhTextList({
-        title: 'JhForm', dataArr: this.dataArr, callBack(index, str) {
+        title: 'JhForm', dataArr: this.dataArr, callBack: (index, str) => {
           console.log(index.toString() + str)
           router.pushUrl({ url: this.dataArr[index].value })
         }

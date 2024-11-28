@@ -1,6 +1,6 @@
 @Entry
 @Component
-struct TestNav {
+struct TestNavigation {
   // menus(value: Array<NavigationMenuItem> | CustomBuilder): NavigationAttribute
 
   aboutToAppear() {

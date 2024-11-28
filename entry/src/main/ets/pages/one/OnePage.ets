@@ -1,12 +1,25 @@
 import { router } from '@kit.ArkUI';
-import { BaseNavigation } from 'JhCommon';
+import { BaseNavigation, KColors } from 'JhCommon';
+import { WxHomePage } from './pages/WxHomePage';
 
+@Preview
 @Entry
 @Component
 export struct OnePage {
   @State message: string = 'One'
 
   build() {
+    Column() {
+      WxHomePage()
+      // this.body()
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor(KColors.wxBgColor)
+  }
+
+  @Builder
+  body() {
     Column() {
       BaseNavigation({ title: "One", leftItem: {} })
       Button('DemoList').onClick(() => {

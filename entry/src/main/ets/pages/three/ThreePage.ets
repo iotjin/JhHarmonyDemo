@@ -1,4 +1,5 @@
-import { BaseNavigation } from 'JhCommon';
+import { BaseNavigation, KColors } from 'JhCommon';
+import { WxDiscoverPage } from './pages/WxDiscoverPage';
 
 @Entry
 @Component
@@ -6,6 +7,17 @@ export struct ThreePage {
   @State message: string = 'Three'
 
   build() {
+    Column() {
+      WxDiscoverPage()
+      // this.body()
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor(KColors.wxBgColor)
+  }
+
+  @Builder
+  body() {
     Column() {
       BaseNavigation({ title: "Three", leftItem: {} })
       RelativeContainer() {

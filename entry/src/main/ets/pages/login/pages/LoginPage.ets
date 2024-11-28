@@ -13,6 +13,10 @@ export struct LoginPage {
   // onChangeName(propName: string) {}
   // onChangePwd(propName: string) {}
 
+  aboutToAppear() {
+    console.log('LoginPage aboutToAppear')
+  }
+
   onChange() {
     let isClick = true
     if (this.name.length < 3) {
@@ -30,6 +34,9 @@ export struct LoginPage {
         Row() {
           Text('注册')
             .fontSize(18)
+            .onClick(() => {
+              this.clickBtn('注册')
+            })
         }
         .justifyContent(FlexAlign.End)
         .width('100%')
@@ -73,11 +80,18 @@ export struct LoginPage {
           onPressed: (): void => this.clickLogin()
         })
           .margin({ top: 50, bottom: 30 })
+
         Row() {
           Text('验证码登录')
             .fontSize(18)
+            .onClick(() => {
+              this.clickBtn('验证码登录')
+            })
           Text('忘记密码')
             .fontSize(18)
+            .onClick(() => {
+              this.clickBtn('忘记密码')
+            })
         }
         .justifyContent(FlexAlign.SpaceBetween)
         .width('100%')
@@ -96,7 +110,20 @@ export struct LoginPage {
       console.log('登录返回数据：', JSON.stringify(res))
       JhProgressHUD.showSuccess(res.msg)
       JhAESPreferencesUtils.saveModel(kUserDefault_UserInfo, res.data)
-      router.replaceUrl({ url: 'pages/BaseTabBar' })
+      // router.replaceUrl({ url: 'pages/BaseTabBar' })
+      router.replaceUrl({ url: 'pages/Index' })
     })
+  }
+
+  clickBtn(text: string) {
+    if (text == '注册') {
+      router.pushUrl({ url: 'pages/login/pages/RegisterPage' })
+    }
+    if (text == '验证码登录') {
+      router.pushUrl({ url: 'pages/login/pages/CodeLoginPage' })
+    }
+    if (text == '忘记密码') {
+      router.pushUrl({ url: 'pages/login/pages/FindPwdPage' })
+    }
   }
 }

@@ -1,5 +1,6 @@
-import { BaseNavigation, JhAESPreferencesUtils, JhProgressHUD, kUserDefault_UserInfo } from 'JhCommon';
+import { BaseNavigation, JhAESPreferencesUtils, JhProgressHUD, KColors, kUserDefault_UserInfo } from 'JhCommon';
 import { router } from '@kit.ArkUI';
+import { WxMinePage } from './pages/WxMinePage';
 
 @Entry
 @Component
@@ -8,10 +9,21 @@ export struct FourPage {
 
   aboutToAppear() {
     let useInfo = JhAESPreferencesUtils.getModel(kUserDefault_UserInfo)
-    console.log('useInfo: ', JSON.stringify(useInfo))
+    // console.log('useInfo: ', JSON.stringify(useInfo))
   }
 
   build() {
+    Column() {
+      WxMinePage()
+      // this.body()
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor(KColors.wxBgColor)
+  }
+
+  @Builder
+  body() {
     Column() {
       BaseNavigation({ title: "Four", leftItem: {} })
       Button('退出登录').onClick((event: ClickEvent) => {
@@ -37,7 +49,7 @@ export struct FourPage {
     JhProgressHUD.showLoadingText('正在退出...')
     setTimeout(() => {
       JhAESPreferencesUtils.delete(kUserDefault_UserInfo)
-      router.replaceUrl({ url: 'pages/login/LoginPage' })
+      router.replaceUrl({ url: 'pages/login/pages/LoginPage' })
       JhProgressHUD.hide()
     }, 1000)
   }

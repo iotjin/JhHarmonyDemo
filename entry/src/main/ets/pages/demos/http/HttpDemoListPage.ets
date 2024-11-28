@@ -12,7 +12,7 @@ struct HttpDemoListPage {
   build() {
     Scroll() {
       JhTextList({
-        title: 'HttpDemoList', dataArr: this.dataArr, callBack(index, str) {
+        title: 'HttpDemoList', dataArr: this.dataArr, callBack: (index, str) => {
           console.log(index.toString() + str)
           router.pushUrl({ url: this.dataArr[index].value })
         }

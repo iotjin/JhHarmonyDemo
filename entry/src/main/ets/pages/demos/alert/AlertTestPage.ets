@@ -25,7 +25,7 @@ struct AlertTestPage {
     Scroll() {
       Column() {
         JhTextList({
-          title: 'JhAlert示例', dataArr: this.dataArr, callBack(index, str) {
+          title: 'JhAlert示例', dataArr: this.dataArr, callBack: (index, str) => {
             if (str == 'Alert标题') {
               JhAlert.showAlert({
                 title: '标题',

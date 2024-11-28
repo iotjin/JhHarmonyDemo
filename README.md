@@ -27,6 +27,11 @@ pwd：123456
 * 工具类
     * AES加解密、MD5加密、Base64编码解码
     * 本地数据AES加密存储
+* UI相关
+    * ListView相关
+    * 登录注册
+    * 仿微信UI（首页，通讯录，发现和个人中心等）
+    * 仿微信右上角弹框
 
 注：
 
@@ -43,6 +48,7 @@ pwd：123456
 | [@ohos/crypto-js](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fcrypto-js)         | **加密算法**            |
 | [@pura/harmony-utils](https://ohpm.openharmony.cn/#/cn/detail/@pura%2Fharmony-utils) | **常用工具类**           |
 | [@jxt/xt_hud](https://ohpm.openharmony.cn/#/cn/detail/@jxt%2Fxt_hud)                 | **Toast和Loading弹框** |
+| [pinyin-pro](https://ohpm.openharmony.cn/#/cn/detail/pinyin-pro)                     | **专业的拼音转换工具**       |
 
 ## 赞赏支持
 
@@ -64,10 +70,23 @@ pwd：123456
 <br>
 <br>
 
-|         <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Login.gif" width="190" height="400">         |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Base/BaseNavigation.gif" width="190" height="400">  | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |
-|:---------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------:|
-|     <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhLoginTextField.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormInputCell.png" width="190" height="400"> |  
-| <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormSelectCell.png" width="190" height="400"> |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhSetCell.png" width="190" height="400">     |                                                        ![]()                                                         |  
+|         <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Login.gif" width="190" height="400">         |      <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_home.png" width="190" height="400">      |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_contacts.png" width="190" height="400">     |
+|:---------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|
+|    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_discover.png" width="190" height="400">     |      <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_mine.png" width="190" height="400">      |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Base/BaseNavigation.gif" width="190" height="400">  |
+| <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhLoginTextField.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormInputCell.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormSelectCell.png" width="190" height="400"> |
+|    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhSetCell.png" width="190" height="400">     | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |     <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     | 
+|  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     |                                                         ![]()                                                         |
+|                                                         ![]()                                                         |                                                        ![]()                                                         |                                                         ![]()                                                         |
+
+<br>
+<br>
+<br>
+
+## 微信UI：
+
+| ![](./ScreenShot/wx/wx_home.png) | ![](./ScreenShot/wx/wx_contacts.png) | ![](./ScreenShot/wx/wx_discover.png) | ![](./ScreenShot/wx/wx_mine.png) |
+|:--------------------------------:|:------------------------------------:|:------------------------------------:|:--------------------------------:|
+|             ![](./)              |               ![](./)                |               ![](./)                |             ![](./)              |
 
 <br>
 

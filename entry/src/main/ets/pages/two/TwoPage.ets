@@ -1,11 +1,27 @@
-import { BaseNavigation } from 'JhCommon';
+import { BaseNavigation, KColors } from 'JhCommon';
+import { WxContactsPage } from './pages/WxContactsPage';
 
 @Entry
 @Component
 export struct TwoPage {
   @State message: string = 'Two'
 
+  aboutToAppear() {
+    console.log('TwoPage aboutToAppear')
+  }
+
   build() {
+    Column() {
+      WxContactsPage()
+      // this.body()
+    }
+    .height('100%')
+    .width('100%')
+    .backgroundColor(KColors.wxBgColor)
+  }
+
+  @Builder
+  body() {
     Column() {
       BaseNavigation({ title: "Two", leftItem: {} })
       RelativeContainer() {

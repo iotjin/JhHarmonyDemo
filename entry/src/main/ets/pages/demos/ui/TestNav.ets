@@ -21,7 +21,7 @@ struct TestNav {
   build() {
     Scroll() {
       JhTextList({
-        title: '导航条', dataArr: this.dataArr, callBack(index, str) {
+        title: '导航条', dataArr: this.dataArr, callBack: (index, str) => {
           console.log(index.toString() + str)
           let passParams: Object = Object({
             label: str,

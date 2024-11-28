@@ -1,6 +1,6 @@
 import { BaseTabBar } from './BaseTabBar'
 import { JhAESPreferencesUtils, JhProgressHUD, kUserDefault_UserInfo } from 'JhCommon';
-import { LoginPage } from './login/LoginPage';
+import { LoginPage } from './login/pages/LoginPage';
 
 @Entry
 @Component

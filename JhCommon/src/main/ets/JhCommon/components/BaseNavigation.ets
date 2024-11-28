@@ -10,7 +10,7 @@ type imageType = string | Resource | PixelMap
 
 interface ItemType {
   icon?: imageType // icon优先级高于text
-  text?: string
+  text?: ResourceStr
   itemCallBack?: () => void
 }
 
@@ -30,14 +30,14 @@ const _appbarEndColor = KColors.kGradientEndColor // 默认appBar 渐变结束�
 @Preview
 @Component
 export struct BaseNavigation {
-  @Prop public title: string = '' // 标题文字
+  @Prop public title: ResourceStr = '' // 标题文字
   private isCenterTitle: boolean = true
   @Prop public titleFontSize: number = _titleFontSize
   @Prop public titleTextAlign: TextAlign = this.isCenterTitle ? TextAlign.Center : TextAlign.Start
   @Prop public bgColor: ResourceColor = _bgColor
   @Prop public leftItem?: ItemType | null = null // 左侧Widget，为空显示返回按钮
   public leftItemCallBack?: () => void
-  @Prop public rightText: string = '' // 右侧按钮文字
+  @Prop public rightText: ResourceStr = '' // 右侧按钮文字
   @Prop public rightImgPath: imageType = '' // 右侧按钮图片路径，优先级高于text ,eg: $rawfile("images/ic_nav_add.png") | 'resources/rawfile/images/ic_nav_add.png'
   public rightItemCallBack?: () => void
   @Prop public rightItems: [] | [ItemType] | [ItemType, ItemType] = [] // 优先级高于rightText和rightImgPath

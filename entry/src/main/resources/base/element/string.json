@@ -11,6 +11,18 @@
     {
       "name": "EntryAbility_label",
       "value": "label"
+    },
+    {
+      "name": "wxPersonInfo",
+      "value": "个人信息"
+    },
+    {
+      "name": "wxPay",
+      "value": "支付"
+    },
+    {
+      "name": "wxPayManager",
+      "value": "支付管理"
     }
   ]
 }

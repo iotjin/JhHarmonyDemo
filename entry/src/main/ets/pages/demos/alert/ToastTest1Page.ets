@@ -26,7 +26,7 @@ struct ToastTest1Page {
   build() {
     Scroll() {
       JhTextList({
-        title: 'JhProgressHUD示例', dataArr: this.dataArr, callBack(index, str) {
+        title: 'JhProgressHUD示例', dataArr: this.dataArr, callBack: (index, str) => {
           if (str == '系统Toast') {
             JhProgressHUD.showToast('Toast')
           }

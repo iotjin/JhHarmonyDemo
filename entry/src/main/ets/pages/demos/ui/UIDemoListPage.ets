@@ -3,7 +3,7 @@ import { JhTextList, ItemType } from 'JhCommon';
 
 @Entry
 @Component
-struct TestNav {
+struct UIDemoListPage {
   dataArr: ItemType[] = [
     { label: 'TabBar', value: 'pages/demos/ui/TestTabBar' },
     { label: 'Navigation', value: 'pages/demos/ui/TestNav' },
@@ -12,7 +12,7 @@ struct TestNav {
   build() {
     Scroll() {
       JhTextList({
-        title: 'UI', dataArr: this.dataArr, callBack(index, str) {
+        title: 'UI', dataArr: this.dataArr, callBack: (index, str) => {
           console.log(index.toString() + str)
           router.pushUrl({ url: this.dataArr[index].value })
         }

@@ -6,6 +6,7 @@ import { FourPage } from './four/FourPage';
 export interface TabType {
   text: string,
   imgPath: string,
+  showBadge?: boolean,
 }
 
 @Preview
@@ -23,6 +24,7 @@ export struct BaseTabBar {
   }, {
     text: '发现',
     imgPath: 'tab/nav_tab_3',
+    showBadge: true
   }, {
     text: '我的',
     imgPath: 'tab/nav_tab_4',
@@ -44,7 +46,7 @@ export struct BaseTabBar {
             }
           }
           .tabBar(this.TabBarBuilder(item.text, index, $rawfile(`${item.imgPath}.png`),
-            $rawfile(`${item.imgPath}_on.png`)))
+            $rawfile(`${item.imgPath}_on.png`), item.showBadge))
         })
       }
       .scrollable(false) //去掉左右滑动的效果
@@ -61,11 +63,21 @@ export struct BaseTabBar {
   }
 
   @Builder
-  TabBarBuilder(title: string, index: number, normalImg: Resource, selectedImg: Resource) {
+  TabBarBuilder(title: string, index: number, normalImg: Resource, selectedImg: Resource, showBadge?: boolean) {
     Column() {
-      Image(this.currentIndex == index ? selectedImg : normalImg)
-        .width(24)
-        .height(24)
+      // Image(this.currentIndex == index ? selectedImg : normalImg)
+      //   .width(24)
+      //   .height(24)
+
+      Badge({
+        value: '',
+        position: { x: 24 - 2.5, y: -2.5 },
+        style: { badgeSize: showBadge && this.currentIndex != index ? 6 : 0, badgeColor: '#FA2A2D' }
+      }) {
+        Image(this.currentIndex == index ? selectedImg : normalImg)
+          .width(24)
+          .height(24)
+      }
 
       Text(title)
         .fontSize(14)
