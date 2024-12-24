@@ -2,12 +2,13 @@
   "modelVersion": "5.0.0",
   "description": "Please describe the basic information.",
   "dependencies": {
-    "@ohos/axios": "^2.2.2",
-    "@ohos/crypto-js": "^2.0.3",
-    "@pura/harmony-utils": "^1.0.7",
-    "@jxt/xt_hud": "^3.1.3",
+    "@ohos/axios": "^2.2.4",
+    "@ohos/crypto-js": "^2.0.4",
+    "@pura/harmony-utils": "^1.2.4",
+    "@jxt/xt_hud": "^3.2.0",
     "@gancao/hptdialog": "^1.0.4",
     "pinyin-pro": "^3.18.3",
+    "@pura/harmony-dialog": "1.0.7"
   },
   "devDependencies": {
     "@ohos/hypium": "1.0.18",

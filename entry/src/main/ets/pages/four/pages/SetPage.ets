@@ -1,5 +1,5 @@
-import { JhTextList, ItemType, JhProgressHUD, JhAESPreferencesUtils, kUserDefault_UserInfo } from 'JhCommon'
 import { router } from '@kit.ArkUI'
+import { JhTextList, ItemType, JhProgressHUD, JhAESPreferencesUtils, kUserDefault_UserInfo, JhAlert } from 'JhCommon'
 
 
 @Entry
@@ -21,7 +21,13 @@ export struct SetPage {
         callBack: (index, str) => {
           console.log(index.toString() + str)
           if (str == '退出登录') {
-            this.exitLogin()
+            JhAlert.showSystemAlert({
+              title: '提示',
+              message: '确认要退出登录吗',
+              onConfirm: () => {
+                this.exitLogin()
+              }
+            })
           }
         }
       })

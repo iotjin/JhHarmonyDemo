@@ -11,7 +11,12 @@ pwd：123456
 
 ## 项目运行环境
 
-* HarmonyOS NEXT Developer Beta3 SDK, based on OpenHarmony SDK Ohos_sdk_public 5.0.0.36 (API Version 12 Beta3)
+* About HarmonyOS SDK
+    * HarmonyOS 5.0.1 Release SDK, inclusion of OpenHarmony SDK Ohos_sdk_public 5.0.1.112 (API Version 13 Release) as is.
+
+* About DevEco Studio
+    * DevEco Studio 5.0.1 Release
+    * Build Version: 5.0.5.300, built on November 28, 2024
 
 ## 实现的一些效果
 
@@ -22,7 +27,7 @@ pwd：123456
 * API接口管理和数据管理
 * 组件
     * BaseNavigation、BaseTabBar
-    * 弹框(中间、底部、toast)
+    * 弹框(中间、底部、toast、dialog、自定义弹框)
     * JhForm 表单录入(单行输入样式、选择样式、登录样式、设置样式)
 * 工具类
     * AES加解密、MD5加密、Base64编码解码
@@ -42,13 +47,14 @@ pwd：123456
 
 ## 使用到的三方库
 
-| 库                                                                                    | 功能                  |
-|--------------------------------------------------------------------------------------|---------------------|
-| [@ohos/axios](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Faxios)                 | **网络库**             |
-| [@ohos/crypto-js](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fcrypto-js)         | **加密算法**            |
-| [@pura/harmony-utils](https://ohpm.openharmony.cn/#/cn/detail/@pura%2Fharmony-utils) | **常用工具类**           |
-| [@jxt/xt_hud](https://ohpm.openharmony.cn/#/cn/detail/@jxt%2Fxt_hud)                 | **Toast和Loading弹框** |
-| [pinyin-pro](https://ohpm.openharmony.cn/#/cn/detail/pinyin-pro)                     | **专业的拼音转换工具**       |
+| 库                                                                                      | 功能                  |
+|----------------------------------------------------------------------------------------|---------------------|
+| [@ohos/axios](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Faxios)                   | **网络库**             |
+| [@ohos/crypto-js](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fcrypto-js)           | **加密算法**            |
+| [@pura/harmony-utils](https://ohpm.openharmony.cn/#/cn/detail/@pura%2Fharmony-utils)   | **常用工具类**           |
+| [@jxt/xt_hud](https://ohpm.openharmony.cn/#/cn/detail/@jxt%2Fxt_hud)                   | **Toast和Loading弹框** |
+| [pinyin-pro](https://ohpm.openharmony.cn/#/cn/detail/pinyin-pro)                       | **专业的拼音转换工具**       |
+| [@pura/harmony-dialog](https://ohpm.openharmony.cn/#/cn/detail/@pura%2Fharmony-dialog) | **一款极为简单易用的零侵入弹窗**  |
 
 ## 赞赏支持
 
@@ -75,7 +81,7 @@ pwd：123456
 |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_discover.png" width="190" height="400">     |      <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_mine.png" width="190" height="400">      |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Base/BaseNavigation.gif" width="190" height="400">  |
 | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhLoginTextField.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormInputCell.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormSelectCell.png" width="190" height="400"> |
 |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhSetCell.png" width="190" height="400">     | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |     <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     | 
-|  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     |                                                         ![]()                                                         |
+|  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhDialog.gif" width="190" height="400">     |
 |                                                         ![]()                                                         |                                                        ![]()                                                         |                                                         ![]()                                                         |
 
 <br>

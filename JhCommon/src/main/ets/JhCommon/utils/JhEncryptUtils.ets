@@ -6,9 +6,9 @@
 import { CryptoJS } from '@ohos/crypto-js'
 
 // 16或32位密钥
-const SECRET_KEY: string = CryptoJS.enc.Utf8.parse('1231231231231231')
+const SECRET_KEY: CryptoJS.lib.WordArray = CryptoJS.enc.Utf8.parse('1231231231231231')
 // 16位密钥偏移量
-const SECRET_IV: string = CryptoJS.enc.Utf8.parse('4564564564564564')
+const SECRET_IV: CryptoJS.lib.WordArray = CryptoJS.enc.Utf8.parse('4564564564564564')
 
 export class JhEncryptUtils {
   /// Base64编码
@@ -25,14 +25,14 @@ export class JhEncryptUtils {
 
   /// md5 加密 32位小写
   public static encodeMd5(plainText: string) {
-    let hash: string = CryptoJS.MD5(plainText)
+    let hash: CryptoJS.lib.WordArray = CryptoJS.MD5(plainText)
     return hash.toString()
   }
 
   /// 字符串AES加密
   public static aesEncrypt(dataStr: string) {
-    const dataHex: string = CryptoJS.enc.Utf8.parse(dataStr)
-    const encrypted: string = CryptoJS.AES.encrypt(dataHex, SECRET_KEY, {
+    const dataHex: CryptoJS.lib.WordArray = CryptoJS.enc.Utf8.parse(dataStr)
+    const encrypted: CryptoJS.lib.CipherParams = CryptoJS.AES.encrypt(dataHex, SECRET_KEY, {
       iv: SECRET_IV,
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7
@@ -42,9 +42,9 @@ export class JhEncryptUtils {
 
   /// 字符串AES解密
   public static aesDecrypt(dataStr: string) {
-    const encryptedStr: string = CryptoJS.enc.Base64.parse(dataStr)
+    const encryptedStr: CryptoJS.lib.WordArray = CryptoJS.enc.Base64.parse(dataStr)
     const str: string = CryptoJS.enc.Base64.stringify(encryptedStr)
-    const decrypt: string = CryptoJS.AES.decrypt(str, SECRET_KEY, {
+    const decrypt: CryptoJS.lib.WordArray = CryptoJS.AES.decrypt(str, SECRET_KEY, {
       iv: SECRET_IV,
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7

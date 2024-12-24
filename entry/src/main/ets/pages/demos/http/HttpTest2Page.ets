@@ -13,6 +13,7 @@ struct HttpTest2Page {
     // this.getRequest0()
     this.getRequest()
     this.postRequest()
+    this.asyncRequest()
   }
 
   build() {
@@ -76,5 +77,16 @@ struct HttpTest2Page {
     }).catch((err: ErrorType) => {
       console.log("err:" + err.msg)
     })
+  }
+
+  async asyncRequest() {
+    const url = APIs.apiPrefix + APIs.getSimpleDictList
+    const params: object = Object({ 'page': 0, 'limit': 10 })
+    let res = await HttpUtils.post(url, params)
+    console.log('code:', res.code)
+    console.log('msg:', res.msg)
+    if (res.code == 200) {
+      console.log("data:" + JSON.stringify(res.data))
+    }
   }
 }

@@ -1,12 +1,12 @@
-///  JhProgressHud.ets
+///  JhProgressHUD.ets
 ///
 ///  Created by iotjin on 2024/08/09.
-///  description: 加载框(promptAction、三方库封装)
+///  description: 加载框(promptAction、@jxt/xt_hud 三方库封装)
 
 import { promptAction, window } from '@kit.ArkUI';
 import { XTHUDLoadingOptions, XTHUDProgressOptions, XTHUDReactiveBaseOptions, XTHUDToastOptions, XTPromptHUD } from '@jxt/xt_hud';
 
-const _bgColor = '#CC000000'
+const _loadingBgColor = '#CC000000'
 const _closeTime = 1500
 const _radius = 5.0
 const _fontSize = 16.0
@@ -85,6 +85,7 @@ export class JhProgressHUD {
     JhProgressHUD._showBarProgress(progress, loadingText)
   }
 
+  /// 隐藏加载框
   public static hide() {
     XTPromptHUD.hideAllToast()
     XTPromptHUD.hideAllLoading()
@@ -106,7 +107,7 @@ export class JhProgressHUD {
         // weight: 600
       }
       options.borderRadius = _radius
-      options.backgroundColor = _bgColor
+      options.backgroundColor = _loadingBgColor
       options.hidingDelay = _closeTime
       options.iconSize = { width: 30, height: 30 }
       options.textPadding = {
@@ -126,7 +127,7 @@ export class JhProgressHUD {
         // weight: 600,
       }
       options.borderRadius = _radius
-      options.backgroundColor = _bgColor
+      options.backgroundColor = _loadingBgColor
       options.iconSize = { width: 50, height: 50 }
       options.iconMargin = {
         top: 16,
@@ -151,7 +152,7 @@ export class JhProgressHUD {
         // weight: 600
       }
       options.borderRadius = _radius
-      options.backgroundColor = _bgColor
+      options.backgroundColor = _loadingBgColor
       options.iconSize = { width: 50, height: 50 }
       options.iconMargin = {
         top: 24,
@@ -180,7 +181,7 @@ export class JhProgressHUD {
       options.isModal = true // 是否为全屏，屏蔽交互
       options.closeOnPressBack = false // 控制是否点击系统返回键时关闭 HUD，默认 false，开启后触发返回关闭会执行 onCancel
       options.closeOnClickOutside = false // 控制是否点击 HUD 背景时关闭（isModal 为 true 时生效），默认 false，开启后触发点击背景关闭会执行 onCancel
-      options.maskColor = _bgColor
+      options.maskColor = _loadingBgColor
       // options.maskColor = '#33000000'
     })
   }
@@ -222,7 +223,7 @@ export class JhProgressHUD {
       fontSize: _fontSize,
       font: { size: _fontSize },
       borderRadius: _radius,
-      backgroundColor: _bgColor,
+      backgroundColor: _loadingBgColor,
       iconMargin: loadingText == '' ? {
         top: 35,
         bottom: 35,

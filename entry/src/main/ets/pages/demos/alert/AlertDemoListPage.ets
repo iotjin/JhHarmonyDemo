@@ -6,7 +6,9 @@ import { JhTextList, ItemType } from 'JhCommon';
 struct AlertDemoListPage {
   dataArr: ItemType[] = [
     { label: 'JhProgressHUD示例', value: 'pages/demos/alert/ToastTest1Page' },
+    { label: 'JhToast示例', value: 'pages/demos/alert/ToastTest2Page' },
     { label: 'JhAlert示例', value: 'pages/demos/alert/AlertTestPage' },
+    { label: 'JhDialog示例', value: 'pages/demos/alert/DialogTestPage' },
   ]
 
   build() {

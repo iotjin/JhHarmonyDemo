@@ -24,9 +24,13 @@ export { default as Request } from '../JhCommon/src/main/ets/JhCommon/http/Reque
 /// components
 export { BaseNavigation } from '../JhCommon/src/main/ets/JhCommon/components/BaseNavigation'
 
+export { JhAlert } from '../JhCommon/src/main/ets/JhCommon/components/JhAlert'
+
 export { JhButton } from '../JhCommon/src/main/ets/JhCommon/components/JhButton'
 
-export { JhAlert } from '../JhCommon/src/main/ets/JhCommon/components/JhAlert'
+export { JhDialog, JhDialogOptions, JhDialogInputOptions, JhCustomOptions } from '../JhCommon/src/main/ets/JhCommon/components/JhDialog'
+
+export { JhToast } from './src/main/ets/JhCommon/components/JhToast'
 
 export { JhProgressHUD } from './src/main/ets/JhCommon/components/JhProgressHUD'
 

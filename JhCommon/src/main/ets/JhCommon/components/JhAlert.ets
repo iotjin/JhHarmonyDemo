@@ -4,7 +4,7 @@
 ///  description:  
 
 import { DialogUtil } from '@pura/harmony-utils';
-import { EasyDialogOptions } from '@pura/harmony-utils/src/main/ets/entity/DialogOptions';
+import { ButtonOptions } from '@pura/harmony-utils/src/main/ets/entity/DialogOptions';
 
 const _borderRadius = 5.0
 const _cancelText = '取消'
@@ -15,6 +15,7 @@ interface JhAlertOptions {
   message?: ResourceStr
   leftText?: ResourceStr
   rightText?: ResourceStr
+  buttons?: Array<ButtonOptions | ResourceStr>
   onCancel?: () => void
   onConfirm?: () => void
 }
@@ -64,22 +65,60 @@ export class JhAlert {
   }
 
   /**
+   * 系统中间弹框
+   * @param options
+   */
+  public static showSystemAlert(options: JhAlertOptions) {
+    AlertDialog.show(
+      {
+        title: options.title,
+        message: options.message ?? '',
+        autoCancel: true,
+        buttons: [
+          {
+            value: options.leftText ?? _cancelText,
+            fontColor: Color.Black,
+            action: () => {
+              options.onCancel?.()
+            }
+          },
+          {
+            value: options.rightText ?? _confirmText,
+            fontColor: Color.Black,
+            action: () => {
+              options.onConfirm?.()
+            }
+          }
+        ],
+        cancel: () => {
+          console.info('Closed callbacks')
+        },
+      }
+    )
+  }
+
+  /**
    * 中间弹框
    * @param options
    */
   public static showAlert(options: JhAlertOptions) {
-    JhAlert.showEasyAlert({
+    DialogUtil.showPrimaryDialog({
       title: options.title,
       message: options.message ?? '',
-      buttons: [options.leftText ?? _cancelText, options.rightText ?? _confirmText],
-      callBack: (index) => {
-        if (index == 0) {
+      primaryButton: {
+        value: options.leftText ?? _cancelText,
+        fontColor: Color.Black,
+        action: () => {
           options.onCancel?.()
         }
-        if (index == 1) {
+      },
+      secondaryButton: {
+        value: options.rightText ?? _confirmText,
+        fontColor: Color.Black,
+        action: () => {
           options.onConfirm?.()
         }
-      }
+      },
     })
   }
 
@@ -114,36 +153,13 @@ export class JhAlert {
    * 中间弹框，多按钮
    * @param options
    */
-  public static showEasyAlert(options: EasyDialogOptions) {
-    DialogUtil.showDialogEasy({
+  public static showMultiButtonsAlert(options: JhAlertOptions) {
+    DialogUtil.showDialog({
       title: options.title,
       message: options.message, // 必填
-      buttons: options.buttons, // 必填
-      callBack: options.callBack,
-      // onWillDismiss: (dismissDialogAction: DismissDialogAction) => {
-      //   console.error("showEasyAlert-onWillDismiss: " + JSON.stringify(dismissDialogAction))
-      //   if (dismissDialogAction.reason == DismissReason.PRESS_BACK) {
-      //     dismissDialogAction.dismiss()
-      //   }
-      //   if (dismissDialogAction.reason == DismissReason.TOUCH_OUTSIDE) {
-      //     dismissDialogAction.dismiss()
-      //   }
-      // }
+      buttons: options.buttons,
     })
   }
-
-  /* eg:
-
-   JhAlert.showEasyAlert({
-      title: '标题',
-      message: '内容',
-      buttons: ['取消', '确认', '确认二'],
-      callBack: (index) => {
-        console.log(`点击了"按钮${(index + 1)}"`)
-      }
-    })
-
-  */
 
   /**
    * 中间弹框，时间选择器

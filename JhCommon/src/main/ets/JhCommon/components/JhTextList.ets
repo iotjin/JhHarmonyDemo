@@ -37,6 +37,7 @@ export struct JhTextList {
         }
         .width('100%')
         .height('100%')
+        .layoutWeight(1)
 
         // // divider 第一个子组件上方和最后一个子组件下方不会绘制分割线
         // .divider({
@@ -44,6 +45,7 @@ export struct JhTextList {
         //   color: _lineColor // 设置分割线颜色
         // })
       }
+      .layoutWeight(1)
     }
   }
 
@@ -53,12 +55,18 @@ export struct JhTextList {
       Row() {
         Text(item.label)
           .fontSize(18)
+          .layoutWeight(1)
+          .margin({ top: 10, bottom: 10 })
+
         Image($rawfile("common/ic_arrow_black.png"))
           .size({ width: 18, height: 18 })
-
+          .margin({ left: 10 })
       }
       .width('100%')
-      .height(_cellHeight - _lineHeight)
+      // .height(_cellHeight - _lineHeight)
+      .constraintSize({
+        minHeight: _cellHeight - _lineHeight,
+      })
       .justifyContent(FlexAlign.SpaceBetween)
 
       Row() {

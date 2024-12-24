@@ -5,6 +5,7 @@ import { JhAlert, JhProgressHUD, JhTextList } from 'JhCommon';
 @Component
 struct AlertTestPage {
   dataArr: ESObject[] = [
+    { label: '系统Alert' },
     { label: 'Alert标题' },
     { label: 'Alert标题2' },
     { label: 'Alert多按钮' },
@@ -16,7 +17,7 @@ struct AlertTestPage {
   ]
 
   aboutToAppear() {
-    // 初始化Loading
+    // 初始化 JhAlert
     JhAlert.initConfig()
     console.log('data', JSON.stringify(this))
   }
@@ -26,6 +27,19 @@ struct AlertTestPage {
       Column() {
         JhTextList({
           title: 'JhAlert示例', dataArr: this.dataArr, callBack: (index, str) => {
+            if (str == '系统Alert') {
+              JhAlert.showSystemAlert({
+                title: '标题',
+                message: '这是内容',
+                onCancel: () => {
+                  console.log(`点击了取消按钮`)
+                },
+                onConfirm: () => {
+                  console.log(`点击了确认按钮`)
+                  JhProgressHUD.showText(`点击了确认按钮`)
+                },
+              })
+            }
             if (str == 'Alert标题') {
               JhAlert.showAlert({
                 title: '标题',
@@ -57,15 +71,32 @@ struct AlertTestPage {
               })
             }
             if (str == 'Alert多按钮') {
-              JhAlert.showEasyAlert({
+              JhAlert.showMultiButtonsAlert({
                 title: '标题',
-                subtitle: '副标题',
                 message: '内容',
-                buttons: ['取消', '确认', '确认二'],
-                callBack: (index) => {
-                  console.log(`点击了"按钮${(index + 1)}"`)
-                  JhProgressHUD.showText(`点击了"按钮${(index + 1)}"`)
-                }
+                buttons: [
+                  {
+                    value: '取消',
+                    fontColor: Color.Blue,
+                    action: () => {
+                      console.log(`点击了取消按钮`)
+                    },
+                  },
+                  {
+                    value: '确认一',
+                    fontColor: Color.Red,
+                    action: () => {
+                      console.log(`点击了确认一按钮`)
+                    },
+                  },
+                  {
+                    value: '确认二',
+                    fontColor: Color.Orange,
+                    action: () => {
+                      console.log(`点击了确认二按钮`)
+                    },
+                  },
+                ],
               })
             }
             if (str == '时间选择器(YMD)') {

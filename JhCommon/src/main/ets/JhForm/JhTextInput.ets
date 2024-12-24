@@ -108,12 +108,8 @@ export struct JhTextInput {
         //计数器显示效果为用户当前输入字符数/最大字符限制数。最大字符限制数通过maxLength()接口设置。
         //如果用户当前输入字符数达到最大字符限制乘50%（thresholdPercentage）。字符计数器显示。
         //用户设置highlightBorder为false时，配置取消红色边框。不设置此参数时，默认为true。
-        // .cancelButton(!this.isShowDeleteBtn ? null : {
-        //   style: this.isEditing ? CancelButtonStyle.INPUT : CancelButtonStyle.INVISIBLE,
-        //   icon: { size: 20, src: this.cancelImage }
-        // }) // 右侧图标有点bug
       .cancelButton(!this.isShowDeleteBtn ? null : {
-        style: CancelButtonStyle.CONSTANT,
+        style: this.isActivated() ? CancelButtonStyle.INPUT : CancelButtonStyle.INVISIBLE,
         icon: { size: this.isActivated() ? 20 : 0, color: '#C8C8C8', src: this.isActivated() ? this.cancelImage : null },
       })
       .inputFilter(this.inputFilter)// 正则

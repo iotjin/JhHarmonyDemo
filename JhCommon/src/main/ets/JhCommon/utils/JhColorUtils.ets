@@ -8,6 +8,6 @@ import { RandomUtil } from '@pura/harmony-utils'
 export class JhColorUtils {
   /// 取随机颜色
   public static randomColor() {
-    return RandomUtil.randomColor()
+    return RandomUtil.getRandomColor()
   }
 }

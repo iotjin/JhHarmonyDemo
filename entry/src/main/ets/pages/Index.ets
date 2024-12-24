@@ -1,14 +1,17 @@
 import { BaseTabBar } from './BaseTabBar'
-import { JhAESPreferencesUtils, JhProgressHUD, kUserDefault_UserInfo } from 'JhCommon';
+import { JhAESPreferencesUtils, kUserDefault_UserInfo } from 'JhCommon';
+import { JhAlert, JhDialog, JhProgressHUD } from 'JhCommon';
 import { LoginPage } from './login/pages/LoginPage';
 
 @Entry
 @Component
 struct Index {
   aboutToAppear() {
-    // 初始化Loading
+    // 初始化Loading和Dialog
     let uiContext: UIContext = this.getUIContext()
+    JhDialog.initConfig(uiContext)
     JhProgressHUD.initUIConfig(uiContext)
+    JhAlert.initConfig()
   }
 
   build() {
