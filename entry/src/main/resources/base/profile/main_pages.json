@@ -43,6 +43,7 @@
     "pages/demos/alert/ToastTest2Page",
     "pages/demos/alert/AlertTestPage",
     "pages/demos/alert/DialogTestPage",
+    "pages/demos/alert/PickerTestPage",
     "pages/demos/other/AESTestPage",
     "pages/demos/form/FormDemoListPage",
     "pages/demos/form/FormLoginTextInputTestPage",

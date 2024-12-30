@@ -9,6 +9,7 @@ struct AlertDemoListPage {
     { label: 'JhToast示例', value: 'pages/demos/alert/ToastTest2Page' },
     { label: 'JhAlert示例', value: 'pages/demos/alert/AlertTestPage' },
     { label: 'JhDialog示例', value: 'pages/demos/alert/DialogTestPage' },
+    { label: '底部弹框示例', value: 'pages/demos/alert/PickerTestPage' },
   ]
 
   build() {

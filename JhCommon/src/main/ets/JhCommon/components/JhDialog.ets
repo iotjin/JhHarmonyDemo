@@ -1,7 +1,7 @@
 ///  JhDialog.ets
 ///
 ///  Created by iotjin on 2024/11/26.
-///  description:  @pura/harmony-dialog 封装。JhDialog和JhToast共用同一默认配置
+///  description:  @pura/harmony-dialog 封装。JhDialog、JhToast、JhPickerTool共用同一默认配置
 
 import { ActionCallBack, AnimationHelper, BaseDialogOptions, DialogAction, DialogHelper } from '@pura/harmony-dialog';
 import { InputFilter } from '@pura/harmony-dialog/src/main/ets/model/InputFilter';
@@ -74,7 +74,7 @@ export class JhDialog {
   /**
    * 设置默认统一样式
    * 初始化Dialog(在全局入口 page 处挂载)
-   * 注：JhDialog、JhToast共用此默认配置
+   * 注：JhDialog、JhToast、JhPickerTool共用此默认配置
    */
   public static initConfig(context: UIContext) {
     DialogHelper.setDefaultConfig((config) => {

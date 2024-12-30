@@ -30,6 +30,8 @@ export { JhButton } from '../JhCommon/src/main/ets/JhCommon/components/JhButton'
 
 export { JhDialog, JhDialogOptions, JhDialogInputOptions, JhCustomOptions } from '../JhCommon/src/main/ets/JhCommon/components/JhDialog'
 
+export { JhPickerTool } from '../JhCommon/src/main/ets/JhCommon/components/JhPickerTool'
+
 export { JhToast } from './src/main/ets/JhCommon/components/JhToast'
 
 export { JhProgressHUD } from './src/main/ets/JhCommon/components/JhProgressHUD'

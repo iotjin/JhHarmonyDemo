@@ -12,11 +12,11 @@ pwd：123456
 ## 项目运行环境
 
 * About HarmonyOS SDK
-    * HarmonyOS 5.0.1 Release SDK, inclusion of OpenHarmony SDK Ohos_sdk_public 5.0.1.112 (API Version 13 Release) as is.
+    * HarmonyOS 5.0.1 Release SDK, inclusion of OpenHarmony SDK Ohos_sdk_public 5.0.1.115 (API Version 13 Release) as is.
 
 * About DevEco Studio
     * DevEco Studio 5.0.1 Release
-    * Build Version: 5.0.5.300, built on November 28, 2024
+    * Build Version: 5.0.5.310, built on December 13, 2024
 
 ## 实现的一些效果
 
@@ -28,6 +28,7 @@ pwd：123456
 * 组件
     * BaseNavigation、BaseTabBar
     * 弹框(中间、底部、toast、dialog、自定义弹框)
+    * 单列、多列选择器
     * JhForm 表单录入(单行输入样式、选择样式、登录样式、设置样式)
 * 工具类
     * AES加解密、MD5加密、Base64编码解码
@@ -81,7 +82,7 @@ pwd：123456
 |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_discover.png" width="190" height="400">     |      <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_mine.png" width="190" height="400">      |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Base/BaseNavigation.gif" width="190" height="400">  |
 | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhLoginTextField.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormInputCell.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormSelectCell.png" width="190" height="400"> |
 |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhSetCell.png" width="190" height="400">     | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |     <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     | 
-|  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhDialog.gif" width="190" height="400">     |
+|    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhDialog.gif" width="190" height="400">     |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhPickerTool.gif" width="190" height="400">  |                                                         ![]()                                                         |
 |                                                         ![]()                                                         |                                                        ![]()                                                         |                                                         ![]()                                                         |
 
 <br>
