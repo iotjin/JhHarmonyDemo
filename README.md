@@ -28,7 +28,7 @@ pwd：123456
 * 组件
     * BaseNavigation、BaseTabBar
     * 弹框(中间、底部、toast、dialog、自定义弹框)
-    * 单列、多列选择器
+    * 单列、多列、底部选择器
     * JhForm 表单录入(单行输入样式、选择样式、登录样式、设置样式)
 * 工具类
     * AES加解密、MD5加密、Base64编码解码

@@ -52,6 +52,9 @@ const dictArr3: ItemType[][] = [
 @Component
 struct PickerTestPage {
   dataArr: ESObject[] = [
+    { label: 'BottomSheet-不带标题' },
+    { label: 'BottomSheet-带标题' },
+    { label: 'BottomSheet-红色按钮' },
     { label: 'JhPickerTool-单列（字符串数组）' },
     { label: 'JhPickerTool-单列（对象数组）' },
     { label: 'JhPickerTool-两列（字符串数组）' },
@@ -71,6 +74,46 @@ struct PickerTestPage {
       Column() {
         JhTextList({
           title: '底部弹框示例', dataArr: this.dataArr, callBack: (index, str) => {
+            if (str === 'BottomSheet-不带标题') {
+              JhPickerTool.showBottomSheet({
+                data: ['hello', 'world', '123'],
+                clickCallback: (index, text) => {
+                  console.error('index', index)
+                  console.error('text', text)
+                  JhProgressHUD.showToast(text)
+                }
+              })
+            }
+            if (str === 'BottomSheet-带标题') {
+              JhPickerTool.showBottomSheet({
+                title: '请选择',
+                data: ['hello', 'world', '123'],
+                clickCallback: (index, text) => {
+                  console.error('index', index)
+                  console.error('text', text)
+                  JhProgressHUD.showToast(text)
+                }
+              })
+            }
+            if (str === 'BottomSheet-红色按钮') {
+              JhPickerTool.showBottomSheet({
+                title: '请选择操作',
+                data: [{
+                  value: "保存本地",
+                  fontSize: 18
+                }, {
+                  value: "删除",
+                  fontColor: Color.Red,
+                  fontSize: 18
+                }],
+                clickCallback: (index, text) => {
+                  console.error('index', index)
+                  console.error('text', text)
+                  JhProgressHUD.showToast(text)
+                }
+              })
+            }
+
             if (str == 'JhPickerTool-单列（字符串数组）') {
               JhPickerTool.showStringPicker({
                 data: stringArr,

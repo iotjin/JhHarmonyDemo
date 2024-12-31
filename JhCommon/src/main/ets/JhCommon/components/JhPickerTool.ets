@@ -3,7 +3,7 @@
 ///  Created by iotjin on 2024/12/25. 
 ///  description:  @pura/harmony-dialog 封装。JhDialog、JhToast、JhPickerTool共用同一默认配置
 
-import { DialogAction, DialogHelper, OnActionCallBack } from "@pura/harmony-dialog"
+import { SheetOptions, DialogAction, DialogHelper, OnActionCallBack } from "@pura/harmony-dialog"
 import { KColors } from "../configs/Colors"
 
 
@@ -40,7 +40,41 @@ export interface JhPickerOptions {
   onConfirm?: (selectValue: string | string[], selectIndexArr: ESObject) => void
 }
 
+export interface JhBottomSheetOptions {
+  data?: Array<SheetOptions> | Array<ResourceStr>; // 数据源
+  title?: ResourceStr
+  /// 选择回调
+  /// index 从上往下 0，1，2
+  clickCallback?: (selectIndex: number, selectText: string) => void
+}
+
 export class JhPickerTool {
+  /**
+   * 底部弹框
+   * @param options
+   */
+  public static showBottomSheet(options: JhBottomSheetOptions) {
+    if ((options.data ?? []).length == 0) {
+      return
+    }
+    DialogHelper.showBottomSheetDialog({
+      title: options.title ?? '',
+      titleFontColor: _titleColor,
+      cancelValue: _cancelText,
+      sheets: options.data ?? [],
+      cornerRadius: _kHeaderRadius,
+      backgroundColor: _bgColor,
+      autoCancel: true, // 点击遮障层时，是否关闭弹窗，true表示关闭弹窗。默认关闭
+      backCancel: false, // 点击返回键或手势返回时，是否关闭弹窗；实现onWillDismiss函数时，该参数不起作用。默认不关闭
+      actionCancel: true, // 点击操作按钮时，是否关闭弹窗。false表示不关闭弹窗。
+      onAction: (index) => {
+        const isStringArray = JhPickerTool.isOneStringArray(options.data)
+        const selectedText: string = isStringArray ? options.data![index] : options.data![index]['value']
+        options.clickCallback?.(index, selectedText)
+      }
+    })
+  }
+
   /**
    * 单列选择器
    * 单列选择器返回选中行对象和index
