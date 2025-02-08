@@ -16,7 +16,7 @@ struct ListTest4Page {
     // this.dataArr = this.getData()
     // console.log('dataArr', JSON.stringify(this.dataArr))
     this.dataArr = data['data']
-    console.log('data', JSON.stringify(data))
+    console.error('data', JSON.stringify(data))
   }
 
   getRawFile() {

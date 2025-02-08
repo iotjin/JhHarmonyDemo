@@ -30,7 +30,7 @@ export struct WxContactsPage {
 
   aboutToAppear() {
     this.dataArr = this.loadData()
-    // console.log('data', JSON.stringify(this.dataArr))
+    // console.error('data', JSON.stringify(this.dataArr))
 
     let tempList: string[] = [];
     for (let i = 0; i < this.dataArr.length; i++) {
@@ -107,7 +107,12 @@ export struct WxContactsPage {
           this.footer()
         }
       }
+      .height('100%')
       .layoutWeight(1)
+      .edgeEffect(EdgeEffect.Spring, {
+        alwaysEnabled: true
+      })
+      .backgroundColor(Color.White)
       .sticky(StickyStyle.Header | StickyStyle.Footer)
       .scrollBar(BarState.Off)
       .onScrollIndex((firstIndex: number, lastIndex: number) => {

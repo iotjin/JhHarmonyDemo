@@ -16,6 +16,8 @@ const _rowSpace = 6.0;
 @Component
 export struct WxMinePage {
   userInfo?: UserModel;
+  scroller: Scroller = new Scroller()
+  @State topH: number = 0
 
   aboutToAppear() {
     let useInfo = JhAESPreferencesUtils.getModel(kUserDefault_UserInfo)
@@ -26,6 +28,10 @@ export struct WxMinePage {
 
   build() {
     Stack({ alignContent: Alignment.TopEnd }) {
+      Row()
+        .width('100%')
+        .height(this.topH + 50)
+        .backgroundColor(Color.White)
       this.body()
       BaseNavigation({
         title: '',
@@ -43,7 +49,7 @@ export struct WxMinePage {
 
   @Builder
   body() {
-    List() {
+    List({ scroller: this.scroller }) {
       this.header()
       ListItem() {
         Column() {
@@ -102,7 +108,23 @@ export struct WxMinePage {
           Blank().height(50)
         }
       }
-    }.backgroundColor(Color.Transparent)
+    }
+    .height('100%')
+    .edgeEffect(EdgeEffect.Spring, {
+      alwaysEnabled: true
+    })
+    .backgroundColor(Color.Transparent)
+    .onDidScroll(() => {
+      this.handleScroll()
+    })
+  }
+
+  handleScroll() {
+    const y = this.scroller.currentOffset().yOffset
+    console.error('滑动距离 ', y)
+    if (y < 0 && y > -1000) {
+      this.topH = Math.abs(y)
+    }
   }
 
   @Builder

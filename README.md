@@ -29,15 +29,22 @@ pwd：123456
     * BaseNavigation、BaseTabBar
     * 弹框(中间、底部、toast、dialog、自定义弹框)
     * 单列、多列、底部选择器
-    * JhForm 表单录入(单行输入样式、选择样式、登录样式、设置样式)
+    * JhForm 表单录入(单行多行输入样式、选择样式、登录样式、设置样式)
+    * 倒计时按钮
 * 工具类
     * AES加解密、MD5加密、Base64编码解码
     * 本地数据AES加密存储
+    * 随机数
 * UI相关
     * ListView相关
+    * GridView相关
     * 登录注册
     * 仿微信UI（首页，通讯录，发现和个人中心等）
     * 仿微信右上角弹框
+    * 小红点
+    * 列表侧滑按钮
+    * 城市选择列表
+    * 导航条图片下拉放大和渐变效果(微信运动排行榜)
 
 注：
 
@@ -82,8 +89,8 @@ pwd：123456
 |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_discover.png" width="190" height="400">     |      <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/wx/wx_mine.png" width="190" height="400">      |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Base/BaseNavigation.gif" width="190" height="400">  |
 | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhLoginTextField.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormInputCell.png" width="190" height="400"> | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhFormSelectCell.png" width="190" height="400"> |
 |    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Form/JhSetCell.png" width="190" height="400">     | <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhProgressHUD.gif" width="190" height="400">  |     <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhAlert.gif" width="190" height="400">     | 
-|    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhDialog.gif" width="190" height="400">     |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhPickerTool.gif" width="190" height="400">  |                                                         ![]()                                                         |
-|                                                         ![]()                                                         |                                                        ![]()                                                         |                                                         ![]()                                                         |
+|    <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhDialog.gif" width="190" height="400">     |  <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/JhPickerTool.gif" width="190" height="400">  |   <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Alert/BootomSheet.gif" width="190" height="400">   |
+|       <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Register.gif" width="190" height="400">        |   <img src="https://gitee.com/iotjh/Picture/raw/master/HarmonyDemo/Other/CitySelect.png" width="190" height="400">   |                                                         ![]()                                                         |
 
 <br>
 <br>
@@ -91,9 +98,12 @@ pwd：123456
 
 ## 微信UI：
 
-| ![](./ScreenShot/wx/wx_home.png) | ![](./ScreenShot/wx/wx_contacts.png) | ![](./ScreenShot/wx/wx_discover.png) | ![](./ScreenShot/wx/wx_mine.png) |
-|:--------------------------------:|:------------------------------------:|:------------------------------------:|:--------------------------------:|
-|             ![](./)              |               ![](./)                |               ![](./)                |             ![](./)              |
+|          ![](./ScreenShot/wx/wx_home.png)          |      ![](./ScreenShot/wx/wx_contacts.png)      |     ![](./ScreenShot/wx/wx_discover.png)      |         ![](./ScreenShot/wx/wx_mine.png)          |
+|:--------------------------------------------------:|:----------------------------------------------:|:---------------------------------------------:|:-------------------------------------------------:|
+|      ![](./ScreenShot/wx/home/wx_motion.png)       |  ![](./ScreenShot/wx/home/wx_motion_top.gif)   | ![](./ScreenShot/wx/home/wx_subscribeNum.png) | ![](./ScreenShot/wx/home/wx_subscribeNumList.png) |
+|     ![](./ScreenShot/wx/home/wx_qqMessage.png)     | ![](./ScreenShot/wx/contacts/wx_addFriend.png) | ![](./ScreenShot/wx/contacts/wx_userInfo.png) |  ![](./ScreenShot/wx/contacts/wx_newFriend.png)   | 
+|    ![](./ScreenShot/wx/contacts/wx_infoSet.png)    |  ![](./ScreenShot/wx/mine/wx_personInfo.png)   |     ![](./ScreenShot/wx/mine/wx_pay.png)      |    ![](./ScreenShot/wx/mine/wx_payManager.png)    |
+| ![](./ScreenShot/wx/discover/wx_friendsCircle.gif) |                    ![](./)                     |                    ![](./)                    |                      ![](./)                      |
 
 <br>
 

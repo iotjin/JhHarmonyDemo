@@ -19,7 +19,7 @@ struct AlertTestPage {
   aboutToAppear() {
     // 初始化 JhAlert
     JhAlert.initConfig()
-    console.log('data', JSON.stringify(this))
+    console.error('data', JSON.stringify(this))
   }
 
   build() {
@@ -169,7 +169,7 @@ struct AlertTestPage {
                 onConfirm: (item: TextPickerResult) => {
                   console.log(`点击了确认按钮`)
                   console.error(`选择了： ${JSON.stringify(item)}}`)
-                  console.log('data', item.value)
+                  console.error('data', item.value)
                   JhProgressHUD.showText(JSON.stringify(item))
                 },
               })

@@ -1,8 +1,15 @@
+///  LoginPage.ets
+///
+///  Created by iotjin on 2024/08/15.
+///  description:  登录
+
 import { router } from '@kit.ArkUI';
-import { APIs, HttpUtils, JhAESPreferencesUtils, JhColorUtils, JhProgressHUD, kUserDefault_UserInfo, ResType } from 'JhCommon';
-import { JhLoginTextInput } from 'JhCommon';
+import { APIs, HttpUtils, ResType } from 'JhCommon';
+import { JhLoginTextInput, JhProgressHUD } from 'JhCommon';
+import { JhAESPreferencesUtils, JhColorUtils, kUserDefault_UserInfo } from 'JhCommon';
 import { JhButton } from 'JhCommon/src/main/ets/JhCommon/components/JhButton';
 
+@Preview
 @Entry
 @Component
 export struct LoginPage {

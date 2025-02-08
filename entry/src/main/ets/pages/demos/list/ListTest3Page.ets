@@ -9,7 +9,7 @@ struct ListTest1Page {
 
   aboutToAppear() {
     this.dataArr = this.getData()
-    console.log('data', JSON.stringify(this.dataArr))
+    console.error('data', JSON.stringify(this.dataArr))
   }
 
   getData() {

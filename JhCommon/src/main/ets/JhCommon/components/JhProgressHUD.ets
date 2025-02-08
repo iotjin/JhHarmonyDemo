@@ -7,7 +7,7 @@ import { promptAction, window } from '@kit.ArkUI';
 import { XTHUDLoadingOptions, XTHUDProgressOptions, XTHUDReactiveBaseOptions, XTHUDToastOptions, XTPromptHUD } from '@jxt/xt_hud';
 
 const _loadingBgColor = '#CC000000'
-const _closeTime = 1500
+const _closeTime = 1000
 const _radius = 5.0
 const _fontSize = 16.0
 

@@ -46,7 +46,7 @@ export struct JhTextInput {
   @State private isEditing: boolean = false
 
   // TextInput官方文档
-  // https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-basic-components-textinput-V5#%E7%A4%BA%E4%BE%8B1
+  // https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/ts-basic-components-textinput-V5
 
   aboutToAppear() {
   }

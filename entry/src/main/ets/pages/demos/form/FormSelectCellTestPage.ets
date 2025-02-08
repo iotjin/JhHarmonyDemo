@@ -33,12 +33,23 @@ struct FormSelectCellTestPage {
       labelText: '顶部文字',
       placeholder: '请选择'
     })
+    Blank().height(8)
+    JhFormSelectCell({
+      text: '这是多行这是多行这是多行这是多行这是多行这是多行这是多行这是多行',
+      labelText: '顶部文字',
+      placeholder: '请选择'
+    })
     JhFormSelectCell({
       title: '左标题',
     })
     JhFormSelectCell({
       title: '左标题',
       text: 'text赋初值',
+    })
+    JhFormSelectCell({
+      title: '左标题',
+      text: '这是多行这是多行这是多行这是多行这是多行这是多行这是多行这是多行',
+      placeholder: '请选择'
     })
     JhFormSelectCell({
       showRedStar: true,

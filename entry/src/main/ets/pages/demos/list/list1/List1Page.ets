@@ -1,6 +1,6 @@
 import { BaseNavigation, KColors } from 'JhCommon'
 import { List1Cell } from './List1Cell'
-import { ListType } from './List1Model'
+import { List1Model } from './List1Model'
 import { promptAction } from '@kit.ArkUI'
 
 
@@ -8,11 +8,11 @@ import { promptAction } from '@kit.ArkUI'
 @Preview
 @Component
 struct List1Page {
-  @State dataArr: ListType[] = []
+  @State dataArr: List1Model[] = []
 
   aboutToAppear() {
     this.dataArr = this.getData()
-    console.log('data', JSON.stringify(this.dataArr))
+    console.error('data', JSON.stringify(this.dataArr))
   }
 
   getData() {
@@ -67,7 +67,7 @@ struct List1Page {
           .width('100%')
       }
 
-      ForEach(this.dataArr, (item: ListType, index: number) => {
+      ForEach(this.dataArr, (item: List1Model, index: number) => {
         ListItem() {
           List1Cell({
             model: item,

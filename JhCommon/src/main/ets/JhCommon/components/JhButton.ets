@@ -16,19 +16,26 @@ const _textColor: ResourceColor = Color.White
 @Component
 export struct JhButton {
   @Prop public text: string = '按钮'
+  @Prop public textColor: ResourceColor = _textColor
+  @Prop public btnWidth: Dimension | Length = '100%'
+  @Prop public btnHeight: Dimension | Length = 48
+  @Prop public btnFontSize: Dimension | Length = _fontSize
+  @Prop public btnRadius: Dimension | Length = _borderRadius
+  @Prop public btnBorderWidth: Dimension | Length = _borderWidth
+  @Prop public bgColor: ResourceColor = _bgColor
   @Prop public disabled: boolean = false
   public onPressed?: () => void // disabled状态点击事件失效
 
   build() {
     Button(this.text)
       .type(ButtonType.Normal)
-      .size({ width: '100%', height: 48 })
-      .backgroundColor(_bgColor)
+      .size({ width: this.btnWidth, height: this.btnHeight })
+      .backgroundColor(this.bgColor)
       .opacity(this.disabled ? 0.6 : 1.0)
-      .borderWidth(_borderWidth)
-      .borderRadius(_borderRadius)
-      .fontSize(_fontSize)
-      .fontColor(_textColor)
+      .borderWidth(this.btnBorderWidth)
+      .borderRadius(this.btnRadius)
+      .fontSize(this.btnFontSize)
+      .fontColor(this.textColor)
       .onClick(() => this.disabled ? null : this.onPressed?.())
   }
 }

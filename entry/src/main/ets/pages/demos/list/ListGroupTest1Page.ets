@@ -37,7 +37,7 @@ struct ListGroupTest1Page {
   ]
 
   aboutToAppear() {
-    console.log('data', JSON.stringify(this.dataArr))
+    console.error('data', JSON.stringify(this.dataArr))
   }
 
   build() {

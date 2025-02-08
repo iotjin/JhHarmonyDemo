@@ -7,6 +7,8 @@ export { JhFormSelectCell } from './src/main/ets/JhForm/JhFormSelectCell'
 
 export { JhSetCell } from './src/main/ets/JhForm/JhSetCell'
 
+export { JhTextArea } from './src/main/ets/JhForm/JhTextArea'
+
 export { JhTextInput } from './src/main/ets/JhForm/JhTextInput'
 
 /// configs
@@ -27,6 +29,8 @@ export { BaseNavigation } from '../JhCommon/src/main/ets/JhCommon/components/Bas
 export { JhAlert } from '../JhCommon/src/main/ets/JhCommon/components/JhAlert'
 
 export { JhButton } from '../JhCommon/src/main/ets/JhCommon/components/JhButton'
+
+export { JhCountDownBtn } from '../JhCommon/src/main/ets/JhCommon/components/JhCountDownBtn'
 
 export { JhDialog, JhDialogOptions, JhDialogInputOptions, JhCustomOptions } from '../JhCommon/src/main/ets/JhCommon/components/JhDialog'
 

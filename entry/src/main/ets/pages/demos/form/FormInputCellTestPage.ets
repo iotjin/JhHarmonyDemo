@@ -22,10 +22,19 @@ struct FormInputCellTestPage {
   @Builder
   _body() {
     JhFormInputCell({
-      placeholder: '默认样式，不设置左标题',
+      placeholder: '默认样式，不设置左标题，可换行',
       inputCallBack: (value) => {
         console.log(value as string)
       },
+    })
+    JhFormInputCell({
+      placeholder: '单行，显示右侧删除按钮',
+      isTextArea: false
+    })
+    JhFormInputCell({
+      placeholder: '单行，密文',
+      isTextArea: false,
+      isPwd: true
     })
     Blank().height(8)
     JhFormInputCell({
@@ -108,6 +117,11 @@ struct FormInputCellTestPage {
       placeholder: '下划线高亮和动画',
       borderAnimation: true,
       borderHighlight: true
+    })
+    JhFormInputCell({
+      text: '右下角显示计数器(多行生效，限制长度50，配合maxLength使用)',
+      showCounter: true,
+      maxLength: 50
     })
     JhFormInputCell({
       title: '左标题',

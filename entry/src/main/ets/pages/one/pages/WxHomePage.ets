@@ -5,7 +5,7 @@
 
 import { promptAction, router } from '@kit.ArkUI'
 import { BaseNavigation, JhProgressHUD, KColors } from 'JhCommon'
-import { WxHomeItemType } from '../models/WxHomeModel'
+import { WxHomeModel } from '../models/WxHomeModel'
 import { WxHomeCell } from '../widgets/WxHomeCell'
 
 
@@ -13,12 +13,12 @@ import { WxHomeCell } from '../widgets/WxHomeCell'
 @Preview
 @Component
 export struct WxHomePage {
-  @State dataArr: WxHomeItemType[] = []
+  @State dataArr: WxHomeModel[] = []
   scroller: ListScroller = new ListScroller()
 
   aboutToAppear() {
     this.dataArr = this.getData()
-    // console.log('data', JSON.stringify(this.dataArr))
+    // console.error('data', JSON.stringify(this.dataArr))
   }
 
   build() {
@@ -32,20 +32,15 @@ export struct WxHomePage {
           this.onClickRightItem()
         },
       })
-      Scroll() {
-        Column() {
-          this.body()
-        }
-        .backgroundColor(KColors.wxBgColor)
-      }
-      .layoutWeight(1)
+      this.body()
     }
+    .backgroundColor(KColors.wxBgColor)
   }
 
   @Builder
   body() {
     List({ scroller: this.scroller }) {
-      ForEach(this.dataArr, (item: WxHomeItemType, index: number) => {
+      ForEach(this.dataArr, (item: WxHomeModel, index: number) => {
         ListItem() {
           WxHomeCell({
             model: item,
@@ -69,6 +64,9 @@ export struct WxHomePage {
       })
     }
     .layoutWeight(1)
+    .edgeEffect(EdgeEffect.Spring, {
+      alwaysEnabled: true
+    })
     .divider({
       strokeWidth: 0.5,
       startMargin: 70,
@@ -257,14 +255,14 @@ export struct WxHomePage {
     }
   }
 
-  clickCell(item: WxHomeItemType) {
+  clickCell(item: WxHomeModel) {
     console.log('点击cell', JSON.stringify(item))
     if (item.title == 'Demo 列表') {
       router.pushUrl({ url: 'pages/demos/DemoListPage' })
     } else if (item.title == '微信运动') {
       router.pushUrl({ url: 'pages/one/pages/WxMotionPage' })
     } else if (item.title == '订阅号消息') {
-      router.pushUrl({ url: 'pages/one/pages/WxSubscriptionNumberListPage' })
+      router.pushUrl({ url: 'pages/one/pages/WxSubscriptionNumberPage' })
     } else if (item.title == 'QQ邮箱提醒') {
       router.pushUrl({ url: 'pages/one/pages/WxQQMessagePage' })
     } else {
@@ -280,7 +278,7 @@ export struct WxHomePage {
   }
 
   getData() {
-    let dataArr: WxHomeItemType[] = [
+    let dataArr: WxHomeModel[] = [
       {
         'title': 'Demo 列表',
         'subtitle': '点击跳转demo列表',

@@ -28,7 +28,7 @@ struct DialogTestPage {
     // 初始化 JhDialog
     let uiContext: UIContext = this.getUIContext()
     JhDialog.initConfig(uiContext)
-    console.log('data', JSON.stringify(this))
+    console.error('data', JSON.stringify(this))
   }
 
   build() {

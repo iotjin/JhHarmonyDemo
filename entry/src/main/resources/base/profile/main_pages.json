@@ -45,6 +45,7 @@
     "pages/demos/alert/DialogTestPage",
     "pages/demos/alert/PickerTestPage",
     "pages/demos/other/AESTestPage",
+    "pages/demos/other/citySelect/CitySelectListPage",
     "pages/demos/form/FormDemoListPage",
     "pages/demos/form/FormLoginTextInputTestPage",
     "pages/demos/form/FormInputCellTestPage",
@@ -57,6 +58,11 @@
     "pages/demos/list/ListTest4Page",
     "pages/demos/list/ListGroupTest1Page",
     "pages/demos/list/ListGroupTest2Page",
-    "pages/demos/list/list1/List1Page"
+    "pages/demos/list/list1/List1Page",
+    "pages/demos/grid/GridDemoListPage",
+    "pages/demos/grid/GridTest1Page",
+    "pages/demos/grid/GridTest2Page",
+    "pages/demos/grid/GridTest3Page",
+    "pages/demos/grid/GridGroupTest1Page"
   ]
 }

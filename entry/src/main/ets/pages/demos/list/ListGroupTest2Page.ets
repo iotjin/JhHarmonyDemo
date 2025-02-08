@@ -17,7 +17,7 @@ export struct ListGroupTest2Page {
 
   aboutToAppear() {
     this.dataArr = this.loadData()
-    // console.log('data', JSON.stringify(this.dataArr))
+    // console.error('data', JSON.stringify(this.dataArr))
 
     const pyStr = pinyin('汉语拼音1', { toneType: 'none' })
     console.log('汉字转拼音：', `汉语拼音1 to ${pyStr}`)

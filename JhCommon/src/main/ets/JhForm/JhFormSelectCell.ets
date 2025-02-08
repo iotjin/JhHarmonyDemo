@@ -4,9 +4,9 @@
 ///  description: 选择行样式（左侧title,右侧箭头文字，可加自定义widget）
 
 import { KColors } from '../JhCommon/configs/Colors'
-import { JhTextInput } from './JhTextInput'
+import { JhTextArea } from './JhTextArea'
 
-const _maxLength = 20
+const _maxLength = 500
 const _titleFontSize = 15.0
 const _textFontSize = 15.0
 const _hintFontSize = 15.0
@@ -17,8 +17,7 @@ const _themeColor = KColors.kThemeColor
 const _lineColor = KColors.kFormLineColor
 
 const _titleWidth = 100 // 左侧title默认宽
-const _cellHeight = 55 // 设置label高度为55，否则是45
-const _inputHeight = 44
+const _cellHeight = 45 // 设置label高度为55，否则是45
 
 
 @Preview
@@ -35,21 +34,17 @@ export struct JhFormSelectCell {
   @Prop public borderHighlight: boolean = false // 下划线高亮，默认false
   @Prop public hiddenLine: boolean = false // 隐藏底部下划线，默认false
   public selectCallBack?: () => void // 选中回调
-  @BuilderParam leftWidget?: () => void // 左侧自定义组件，默认隐藏，优先级高于title，高度为_inputHeight,宽度为titleWidth
-  @BuilderParam rightWidget?: () => void // 右侧自定义组件，默认隐藏，高度为_inputHeight，设置宽度会压缩录入框的宽度
-  // JhTextInput 属性
+  @BuilderParam leftWidget?: () => void // 左侧自定义组件，默认隐藏，优先级高于title，高度为cellHeight,宽度为titleWidth
+  @BuilderParam rightWidget?: () => void // 右侧自定义组件，默认隐藏，高度为cellHeight，设置宽度会压缩录入框的宽度
+  // JhTextArea 属性
   @Prop public text?: ResourceStr = ''
   @Prop public placeholder?: ResourceStr = '请选择'
   @Prop public errorText?: ResourceStr | undefined = '' // 错误提示文字
   @Prop public textStyle: TextStyle = { fontSize: _textFontSize, fontColor: _textColor }
   @Prop public hintTextStyle: TextStyle = { fontSize: _hintFontSize, fontColor: _hintColor }
-  @Prop public inputType: InputType = InputType.Normal // 输入框类型
-  @Prop public enterKeyType: EnterKeyType = EnterKeyType.Done // 输入法回车键类型
   @Prop public textAlign: TextAlign = TextAlign.Start // 输入文字对齐方式，默认左对齐
   @Prop public maxLength: number = _maxLength // 最大长度，默认_maxLength
   @Prop public isShowBorder: boolean = false // 是否显示边框，默认不显示
-  @Prop public isPwd: boolean = false // 是否是密码，默认不是
-  @Prop public isShowDeleteBtn: boolean = true // 是否显示右侧删除按钮，默认不显示
   @Prop public inputFilter: ResourceStr = '' // 通过正则表达式设置输入过滤器
   public inputCallBack?: (value: ResourceStr) => void // 录入改变回调
   public inputDoneCallBack?: (value: ResourceStr, isEditing: boolean) => void // 录入完成回调（失去焦点或者点击键盘右下角按钮触发）
@@ -57,6 +52,7 @@ export struct JhFormSelectCell {
   @State private isEditing: boolean = false
   @State private activeColor: ResourceColor = _themeColor
   @State private arrowIcon: ResourceStr = $rawfile("JhForm/ic_arrow_right.svg")
+  @State private cellHeight: number = _cellHeight // 右侧录入框的高度，单行高度为_cellHeight，多行最小为_cellHeight
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
@@ -82,7 +78,7 @@ export struct JhFormSelectCell {
           .margin({ top: this.getTopMargin() })
           .padding({ left: 5, right: 5 })
           .width(this.titleWidth)
-          .height(_inputHeight)
+          .height(this.cellHeight)
         }
 
         // center
@@ -99,11 +95,11 @@ export struct JhFormSelectCell {
           }
           Image(this.arrowIcon)
             .fillColor('#C8C8C8')
-            .width(_inputHeight / 2)
-            .height(_inputHeight / 2)
+            .width((_cellHeight - 1) / 2)
+            .height((_cellHeight - 1) / 2)
         }
-        .height(this.isActivated() ? this.getCellHeight() : _inputHeight)
         .margin({ top: this.isActivated() ? 0 : this.getTopMargin() })
+        .height(this.cellHeight)
       }
 
       // label text
@@ -122,7 +118,7 @@ export struct JhFormSelectCell {
     }
     // .align(Alignment.TopStart)
     .width('100%')
-    .height(this.getCellHeight())
+    .constraintSize({ minHeight: this.getCellHeight() })
     .onClick(() => {
       this.selectCallBack?.()
     })
@@ -137,30 +133,26 @@ export struct JhFormSelectCell {
   }
 
   getCellHeight() {
-    return this.labelText ? _cellHeight : _cellHeight - 10
+    return this.labelText ? this.cellHeight + 10 : this.cellHeight
   }
 
   getTopMargin() {
-    return this.getCellHeight() - _inputHeight
+    return this.labelText ? 10 : 0
   }
 
   @Builder
   inputBuilder() {
-    JhTextInput({
+    JhTextArea({
       text: this.text,
       placeholder: this.placeholder,
       // placeholder: this.isEditing ? '' : this.placeholder,
       textStyle: this.textStyle,
       hintTextStyle: this.hintTextStyle,
-      inputType: this.inputType,
-      enterKeyType: this.enterKeyType,
       textAlign: this.textAlign,
       cursorColor: this.activeColor,
       bottomLineColor: this.activeColor,
       maxLength: this.maxLength,
       isShowBorder: this.isShowBorder,
-      isPwd: this.isPwd,
-      isShowDeleteBtn: this.isShowDeleteBtn,
       inputFilter: this.inputFilter,
       inputCallBack: (value: ResourceStr) => {
         this.text = value
@@ -172,8 +164,11 @@ export struct JhFormSelectCell {
       },
     })
       .width('100%')
-      .height(_inputHeight)
+      .constraintSize({ minHeight: _cellHeight })
       .margin({ top: this.getTopMargin() })
+      .onAreaChange((_oldValue: Area, newValue: Area) => {
+        this.cellHeight = newValue.height as number
+      })
   }
 
   @Builder

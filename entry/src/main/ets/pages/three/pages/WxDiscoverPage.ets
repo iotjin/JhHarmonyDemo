@@ -22,7 +22,11 @@ export struct WxDiscoverPage {
         Column() {
           this.body()
         }
+        .height('100%')
       }
+      .edgeEffect(EdgeEffect.Spring, {
+        alwaysEnabled: true
+      })
     }
     .backgroundColor(KColors.wxBgColor)
   }

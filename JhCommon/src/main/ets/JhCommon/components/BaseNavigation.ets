@@ -27,6 +27,9 @@ const _titleColor: ResourceColor = KColors.kNavTitleColor
 const _appbarStartColor = KColors.kGradientStartColor // 默认appBar 渐变开始色
 const _appbarEndColor = KColors.kGradientEndColor // 默认appBar 渐变结束色
 
+const _backImageWhite = $rawfile("common/ic_nav_back_white.png")
+const _backImageBlack = $rawfile("common/ic_nav_back_black.png")
+
 @Preview
 @Component
 export struct BaseNavigation {
@@ -34,7 +37,7 @@ export struct BaseNavigation {
   private isCenterTitle: boolean = true
   @Prop public titleFontSize: number = _titleFontSize
   @Prop public titleTextAlign: TextAlign = this.isCenterTitle ? TextAlign.Center : TextAlign.Start
-  @Prop public bgColor: ResourceColor = _bgColor
+  @Prop @Watch('onChangeBgColor') public bgColor: ResourceColor = _bgColor
   @Prop public leftItem?: ItemType | null = null // 左侧Widget，为空显示返回按钮
   public leftItemCallBack?: () => void
   @Prop public rightText: ResourceStr = '' // 右侧按钮文字
@@ -43,17 +46,32 @@ export struct BaseNavigation {
   @Prop public rightItems: [] | [ItemType] | [ItemType, ItemType] = [] // 优先级高于rightText和rightImgPath
   @Prop public isGradient: boolean = false // 是否渐变背景色
   @Prop public navHeight: number = 56 // 传入child为100%，否则为navHeight
+  @Prop public rate: number = _rate // 大于默认值会压缩标题的空间, 使得左右空间占比变多
   @BuilderParam child?: () => void // 子组件
   //
-  private backImage: imageType = $rawfile("common/ic_nav_back_white.png")
-  private titleAndIconColor: ResourceColor = _titleColor
+  @State private backImage: imageType = _backImageWhite
+  @State private titleAndIconColor: ResourceColor = _titleColor
 
   aboutToAppear() {
+    this.onChangeBgColor()
+  }
+
+  onChangeBgColor() {
     // 如果背景透明或者是白色，设置字体和图标、状态栏字体为黑色
-    let isTransparent = this.bgColor == Color.Transparent || this.bgColor == Color.White || this.bgColor == KColors.kNavWhiteBgColor
+    const isTransparent = this.bgColor == Color.Transparent || this.bgColor == Color.White || this.bgColor == KColors.kNavWhiteBgColor
     if (isTransparent) {
       this.titleAndIconColor = Color.Black
-      this.backImage = $rawfile("common/ic_nav_back_black.png")
+      this.backImage = _backImageBlack
+    } else {
+      // 导航条渐变显隐处理
+      if (this.bgColor == 'rgba(237,237,237,0)') {
+        this.titleAndIconColor = _titleColor
+        this.backImage = _backImageWhite
+      }
+      if (this.bgColor == 'rgba(237,237,237,1)') {
+        this.titleAndIconColor = Color.Black
+        this.backImage = _backImageBlack
+      }
     }
   }
 
@@ -94,13 +112,13 @@ export struct BaseNavigation {
         this.backBuilder()
       }
     }
-    .layoutWeight(_rate)
+    .layoutWeight(this.rate)
     .width('100%')
 
     Row() {
       this.titleBuilder()
     }
-    .layoutWeight(this.rightItems.length ? (100 - _rate - this.rightItems.length * _rate) : (100 - _rate * 2))
+    .layoutWeight(this.rightItems.length ? (100 - this.rate - this.rightItems.length * this.rate) : (100 - this.rate * 2))
     .width('100%')
 
     if (this.rightItems.length) {
@@ -114,14 +132,14 @@ export struct BaseNavigation {
         })
       }
       .margin({ left: this.rightItems.length == 2 ? 15 : 0, right: this.rightItems.length == 2 ? 5 : 0 })
-      .layoutWeight(_rate * this.rightItems.length)
+      .layoutWeight(this.rate * this.rightItems.length)
       .width('100%')
     } else {
       Row() {
         this.itemBuilder({ icon: this.rightImgPath, text: this.rightText })
       }
       .onClick(this.rightItemCallBack)
-      .layoutWeight(_rate)
+      .layoutWeight(this.rate)
       .width('100%')
     }
   }
