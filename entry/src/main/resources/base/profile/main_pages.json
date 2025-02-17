@@ -63,6 +63,7 @@
     "pages/demos/grid/GridTest1Page",
     "pages/demos/grid/GridTest2Page",
     "pages/demos/grid/GridTest3Page",
+    "pages/demos/grid/GridTest4Page",
     "pages/demos/grid/GridGroupTest1Page"
   ]
 }

@@ -42,6 +42,7 @@ export { JhProgressHUD } from './src/main/ets/JhCommon/components/JhProgressHUD'
 
 export { JhTextList, ItemType } from '../JhCommon/src/main/ets/JhCommon/components/JhTextList'
 
+export { JhNinePicture } from './src/main/ets/JhCommon/components/JhNinePicture'
 
 /// utils
 export * from '../JhCommon/src/main/ets/JhCommon/utils/JhCommonUtils'
